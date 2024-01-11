@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+:root {
+  /* ### Primary
+
+Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+### Neutral
+
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%) */
+
+  --clr-primary-orange: hsl(31, 77%, 52%);
+  --clr-primary-cyan: hsl(184, 100%, 22%);
+  --clr-primary-d-cyan: hsl(179, 100%, 13%);
+
+  --clr-neutral-white: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-gray: hsl(0, 0%, 95%);
+
+  --ff-heading: "Big Shoulders Display", sans-serif;
+  --ff-body: "Lexend Deca", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  min-height: 100vh;
+  background-color: var(--clr-neutral-gray);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.container-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 0.7rem;
+  margin: 2rem;
+  overflow: hidden;
+}
+.box1 {
+  background-color: var(--clr-primary-orange);
+}
+.box2 {
+  background-color: var(--clr-primary-cyan);
+}
+.box3 {
+  background-color: var(--clr-primary-d-cyan);
+}
+.box {
+  padding: 40px;
+}
+.title {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--clr-neutral-gray);
+  font-size: 1.5rem;
+}
+.description {
+  color: var(--clr-neutral-white);
+  line-height: 1.6;
+}
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  background-color: var(--clr-neutral-gray);
+  padding: 13px 27px;
+  border-radius: 26px;
+  border: 2px solid var(--clr-neutral-gray);
+}
+.button1 {
+  color: var(--clr-primary-orange);
+}
+.button2 {
+  color: var(--clr-primary-cyan);
+}
+.button3 {
+  color: var(--clr-primary-d-cyan);
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover {
+  color: var(--clr-neutral-gray);
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+@media (max-width: 40em) {
+  .container-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 87%;
+  }
+  .title {
+    margin: 7% 0;
+    font-size: 30px;
+  }
+  .description {
+    line-height: 2;
+  }
+}
